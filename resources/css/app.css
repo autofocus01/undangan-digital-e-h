@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+/* ── Custom font ── */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+
+:root {
+    --cream: #faf7f2;
+    --gold: #b89a5a;
+    --gold-light: #d4b87a;
+    --brown: #4a3728;
+    --sage: #8a9e8c;
+    --text: #2d2318;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cream);
+    color: var(--text);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+}
+
+/* ── Typography ── */
+.font-display {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* ── Cover / Opening ── */
+#cover {
+    background: linear-gradient(160deg, #1a1209 0%, #2d1f0e 50%, #1a1209 100%);
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 40%, rgba(184,154,90,0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* ── Ornament SVG lines ── */
+.ornament-line {
+    stroke: var(--gold);
+    stroke-width: 0.5;
+    opacity: 0.6;
+}
+
+/* ── Section divider ── */
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--gold);
+}
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+}
+
+/* ── Countdown ── */
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 4.5rem;
+}
+.countdown-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--brown);
+}
+.countdown-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-top: 0.25rem;
+}
+
+/* ── Card ── */
+.card {
+    background: #fff;
+    border: 1px solid rgba(184,154,90,0.2);
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+}
+
+/* ── Music button ── */
+#music-btn {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 50;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--gold);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(184,154,90,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+#music-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 24px rgba(184,154,90,0.5);
+}
+
+/* ── RSVP form ── */
+.form-input {
+    width: 100%;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid rgba(184,154,90,0.35);
+    border-radius: 0.5rem;
+    background: #fff;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-input:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(184,154,90,0.12);
+}
+.form-label {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 0.4rem;
+}
+
+/* ── Ucapan card ── */
+.ucapan-card {
+    border-left: 3px solid var(--gold-light);
+    padding: 0.75rem 1rem;
+    background: rgba(184,154,90,0.04);
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+/* ── Animations ── */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+    animation: fadeUp 0.9s ease both;
+}
+.delay-1 { animation-delay: 0.15s; }
+.delay-2 { animation-delay: 0.35s; }
+.delay-3 { animation-delay: 0.55s; }
+.delay-4 { animation-delay: 0.75s; }
+
+@keyframes spin-slow {
+    to { transform: rotate(360deg); }
+}
+.spin-slow {
+    animation: spin-slow 8s linear infinite;
+}
+
+/* ── Scroll reveal (JS adds .revealed) ── */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
