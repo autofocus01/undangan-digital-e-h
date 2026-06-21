@@ -28,6 +28,15 @@
     </h1>
     <p class="mt-6 text-white/50 text-xs tracking-widest uppercase">Undangan Pernikahan</p>
 
+    {{-- Guest name dari URL parameter --}}
+    <div id="guest-name-box" style="display:none; margin-top: 1.5rem;">
+        <p style="color:rgba(255,255,255,0.4); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.25rem;">
+            Kepada Yth.
+        </p>
+        <p id="guest-name-text" style="color:var(--gold-light); font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-style:italic;">
+        </p>
+    </div>
+
     <div class="mt-10 flex flex-col items-center gap-2">
         <div style="width:42px;height:42px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
@@ -327,6 +336,18 @@ function openInvitation() {
 
     // Jalankan scroll reveal
     initReveal();
+}
+
+// ── Guest name dari URL ────────────────────────────────────────
+const params = new URLSearchParams(window.location.search);
+const guestName = params.get('to');
+if (guestName) {
+    const box  = document.getElementById('guest-name-box');
+    const text = document.getElementById('guest-name-text');
+    if (box && text) {
+        text.textContent = decodeURIComponent(guestName);
+        box.style.display = 'block';
+    }
 }
 
 // ── Scroll reveal ──────────────────────────────────────────────
