@@ -139,7 +139,7 @@
     </div>
 
     <div class="card p-6 reveal">
-        <p class="text-xs tracking-widest uppercase mb-1" style="color:var(--sage);">Resepsi</p>
+        <p class="text-xs tracking-widest uppercase mb-1" style="color:var(--sage);">Agenda Acara Tambahan</p>
         <p class="font-display text-2xl" style="color:var(--brown);">Yt by Al Istihdhor</p>
         <a href="https://youtu.be/XKwlZ-M4QW0?si=DtVaTipD3_R8omdw"
        target="_blank"
