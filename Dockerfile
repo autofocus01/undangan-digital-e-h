@@ -10,7 +10,6 @@ RUN apk add --no-cache \
     unzip \
     git \
     mysql-client \
-    php82-pdo_mysql \
     libpng-dev \
     oniguruma-dev \
     libxml2-dev \
@@ -61,11 +60,11 @@ RUN mkdir -p storage/framework/{sessions,views,cache} \
     && chmod -R 775 storage bootstrap/cache database
 
 # Copy config files
-COPY docker/nginx.conf /etc/nginx/http.d/default.conf
+COPY docker/nginx.conf /etc/nginx/http.d/default.conf.template
 COPY docker/supervisord.conf /etc/supervisord.conf
 COPY docker/start.sh /start.sh
 RUN chmod +x /start.sh
 
-EXPOSE 10000
+EXPOSE ${PORT:-8080}
 
 CMD ["/start.sh"]

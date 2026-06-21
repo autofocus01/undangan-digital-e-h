@@ -5,6 +5,10 @@ echo "==> Setting up Laravel..."
 
 cd /var/www/html
 
+# Substitute PORT into nginx config (Railway provides $PORT dynamically)
+export PORT="${PORT:-8080}"
+envsubst '${PORT}' < /etc/nginx/http.d/default.conf.template > /etc/nginx/http.d/default.conf
+
 # Generate app key if not set
 if [ -z "$APP_KEY" ]; then
     echo "==> Generating APP_KEY..."
