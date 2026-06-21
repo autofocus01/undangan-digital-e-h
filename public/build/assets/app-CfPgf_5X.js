@@ -1,0 +1,1 @@
+var e=document.getElementById(`kehadiran`),t=document.getElementById(`pax-group`);e&&t&&(e.addEventListener(`change`,()=>{t.style.display=e.value===`Hadir`?`block`:`none`}),t.style.display=e.value===`Hadir`?`block`:`none`);
