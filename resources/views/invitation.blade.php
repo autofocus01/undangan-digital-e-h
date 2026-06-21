@@ -132,10 +132,38 @@
         <p class="text-sm text-stone-500 mt-1">Pukul 08.00 - 10.00 WIB</p>
     </div>
 
-    <div class="card p-6 reveal">
+    <div class="card p-6 mb-6 reveal">
         <p class="text-xs tracking-widest uppercase mb-1" style="color:var(--sage);">Resepsi</p>
         <p class="font-display text-2xl" style="color:var(--brown);">Minggu, 5 Juli 2026</p>
         <p class="text-sm text-stone-500 mt-1">Pukul 11.00 — 16.00 WIB</p>
+    </div>
+
+    <div class="card p-6 reveal">
+        <p class="text-xs tracking-widest uppercase mb-1" style="color:var(--sage);">Resepsi</p>
+        <p class="font-display text-2xl" style="color:var(--brown);">Yt by Al Istihdhor</p>
+        <a href="https://youtu.be/XKwlZ-M4QW0?si=DtVaTipD3_R8omdw"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Tonton Live Streaming di YouTube"
+       style="
+           display: inline-flex;
+           align-items: center;
+           justify-content: center;
+           width: 52px;
+           height: 52px;
+           border-radius: 50%;
+           background: #FF0000;
+           transition: transform 0.2s, box-shadow 0.2s;
+           box-shadow: 0 4px 16px rgba(255,0,0,0.3);
+       "
+       onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 24px rgba(255,0,0,0.45)';"
+       onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 16px rgba(255,0,0,0.3)';">
+ 
+        {{-- Ikon play YouTube --}}
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+    </a>
     </div>
 </section>
 
@@ -256,31 +284,6 @@
         Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir memberikan doa restu.
     </p>
     <div class="mt-8 reveal">
-    <a href="https://youtu.be/XKwlZ-M4QW0?si=DtVaTipD3_R8omdw"
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-label="Tonton Live Streaming di YouTube"
-       style="
-           display: inline-flex;
-           align-items: center;
-           justify-content: center;
-           width: 52px;
-           height: 52px;
-           border-radius: 50%;
-           background: #FF0000;
-           transition: transform 0.2s, box-shadow 0.2s;
-           box-shadow: 0 4px 16px rgba(255,0,0,0.3);
-       "
-       onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 24px rgba(255,0,0,0.45)';"
-       onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 16px rgba(255,0,0,0.3)';">
- 
-        {{-- Ikon play YouTube --}}
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
-            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-        </svg>
-    </a>
-     <p class="font-display text-2xl mt-1 reveal" style="color:var(--gold);">Yt by Al Istihdhor</p>
-</div>
     <p class="mt-6 text-sm text-stone-500 reveal">Kami yang berbahagia,</p>
     <p class="font-display text-2xl mt-1 reveal" style="color:var(--gold);">Edi &amp; Husna</p>
     <div class="mt-10 reveal">
@@ -293,14 +296,13 @@
         </a>
     </div>
 </section>
-
 </div>{{-- end #main-content --}}
 
 {{-- ══════════════════════════════════
      AUDIO (autoplay setelah klik splash)
 ═══════════════════════════════════ --}}
 <audio id="bg-music" loop>
-    <source src="/assets/audio/Music_2.mp3" type="audio/mpeg">
+    <source src="/assets/audio/Music_3.mp3" type="audio/mpeg">
 </audio>
 
 <script>
