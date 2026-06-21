@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Undangan Pernikahan Digital" />
     <title>@yield('title', 'Undangan Pernikahan')</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+   <link rel="stylesheet" href="/build/assets/app-BJpMmGN8.css">
+<script src="/build/assets/app-CfPgf_5X.js" defer></script>
 </head>
 <body>
     @yield('content')
